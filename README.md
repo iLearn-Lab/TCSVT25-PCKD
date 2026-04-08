@@ -25,14 +25,14 @@ Muhe Ding, Jianlong Wu, Xue Dong, Xiaojie Li, Pengda Qin, Tian Gan, Liqiang Nie
 
 This paper has been **accepted by IEEE Transactions on Circuits and Systems for Video Technology (TCSVT 2025)**.
 
-We propose a novel knowledge distillation framework that enhances student learning by modeling **category-level structures** rather than only instance-level alignment.
+While mainstream Knowledge Distillation (KD) methods successfully transfer knowledge by aligning instance-level feature representations, they often neglect **category-level information** and the inherent **difficulty of individual samples**. To address these issues, we propose **PCKD**, a novel Preview-based Category Contrastive Learning method. 
 
-Our method introduces:
+Our framework enhances student learning through two core innovations:
 
-- **Category Contrastive Learning** to capture inter-class relationships  
-- **Preview Strategy** to adaptively adjust learning based on sample difficulty  
+- **Category Contrastive Learning:** It distills structural knowledge by modeling both instance-level feature correspondence and the relationships between instance features and category centers. This explicit optimization yields highly discriminative category centers and better classification accuracy.
+- **Dynamic Preview Strategy:** Unlike existing methods that treat all samples equally or curriculum learning that simply drops hard samples, PCKD dynamically determines learning weights based on sample difficulty. It assigns a smaller weight to hard instances—acting as a "preview"—to gently and effectively guide the student's training.
 
-This leads to more **discriminative representations** and improved generalization.
+Extensive experiments demonstrate that PCKD achieves state-of-the-art performance across several challenging datasets, including **CIFAR-100, ImageNet, and Pascal VOC**.
 
 ---
 
@@ -79,7 +79,8 @@ The framework consists of:
 - Outperforms state-of-the-art KD methods  
 - Benchmarks:
   - CIFAR-100  
-  - ImageNet  
+  - ImageNet
+  - Pascal VOC
 
 ---
 
@@ -88,6 +89,6 @@ The framework consists of:
 ### Installation
 
 ```bash
-git clone https://github.com/yourname/PCKD.git
+git clone [https://github.com/yourname/PCKD.git](https://github.com/yourname/PCKD.git)
 cd PCKD
 pip install -r requirements.txt
