@@ -74,7 +74,7 @@ The framework consists of:
 
 ## 📊 Results
 
-<img src="./assets/results.png">
+<img src="./assets/cifar-10.png">
 
 - Outperforms state-of-the-art KD methods  
 - Benchmarks:
